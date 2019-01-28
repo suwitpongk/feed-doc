@@ -1,0 +1,53 @@
+host: 139.5.145.187:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /GetFeedContent/{FeedId}:
+    get:
+      consumes:
+      - application/json
+      description: get string
+      parameters:
+      - description: FeedId
+        in: path
+        name: FeedId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/FeedIndex'
+            type: object
+      summary: Show a GetFeedContent
+      tags:
+      - GetFeedContent
+  /GetFeedIndex:
+    get:
+      consumes:
+      - application/json
+      description: get string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/FeedIndex'
+            type: object
+      summary: Show a GetFeedIndex
+      tags:
+      - GetFeedIndex
+swagger: "2.0"
